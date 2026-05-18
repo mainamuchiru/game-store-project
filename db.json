@@ -1,0 +1,12 @@
+{
+  "plants": [
+    {
+      "id": "1",
+      "name": "Aloe",
+      "image": "./images/aloe.jpg",
+      "platform" : ["PC, XBOX One", "PS4"],
+      "price": 15.99
+
+    }
+]
+}
