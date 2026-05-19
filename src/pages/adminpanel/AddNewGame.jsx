@@ -3,13 +3,14 @@ import ProductForm from "../../components/ProductForm";
 import useProducts from "../../hooks/useProducts";
 
 function AddNewGame() {
+  const buttonText = "Add Game"
   const { createProduct } = useProducts();
   const [gameData, setGameData] = useState({
     name: "",
     description: "",
     releasedate: "",
-    gamegenre: "",
-    platform: "",
+    gamegenre: [],
+    platform: [],
     image: "",
     imageurl: "",
     price: "",
@@ -17,12 +18,28 @@ function AddNewGame() {
   });
 
   function handleChange(e) {
-    const { name, value, files } = e.target;
+    const { name, value, files, selectedOptions } = e.target;
 
-    setGameData({
-      ...gameData,
-      [name]: files ? URL.createObjectURL(files[0]) : value,
-    });
+    if (files) {
+      // File input
+      setGameData({
+        ...gameData,
+        [name]: URL.createObjectURL(files[0]),
+      });
+    } else if (selectedOptions) {
+      // Multi-select (gamegenre or platform)
+      const values = Array.from(selectedOptions).map((opt) => opt.value);
+      setGameData({
+        ...gameData,
+        [name]: values,
+      });
+    } else {
+      // Regular input
+      setGameData({
+        ...gameData,
+        [name]: value,
+      });
+    }
   }
 
   async function handleSubmit(e) {
@@ -38,6 +55,8 @@ function AddNewGame() {
       products={gameData}
       handleChange={handleChange}
       handleSubmit={handleSubmit}
+      headerTitle={"Add New Game"}
+      buttonText={"Add Game"}
     />
   );
 }
