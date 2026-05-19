@@ -30,7 +30,7 @@ A React-based web application for managing a video game store inventory. Built a
 1. Clone the repository
 
    ```bash
-   git clone https://github.com/yourusername/game-store-manager.git
+   git clone https://github.com/mainamuchiru/game-store-project.git
    cd game-store-manager
    ```
 
