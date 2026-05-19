@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Products from "../pages/Products";
-import AdminPanel from "../pages/AdminPanel";
+import AdminLandingPage from "../pages/adminpanel/AdminLandingPage";
 import Contacts from "../pages/Contacts"
 import Home from "../pages/Home"
 

@@ -1,9 +1,7 @@
-
-
-function ProductForm() {
+function ProductForm({ products, handleSubmit, handleChange }) {
   return (
     <div className="container mt-5 d-flex justify-content-center">
-       <div
+      <div
         className="card shadow p-4"
         style={{
           width: "100%",
@@ -11,19 +9,20 @@ function ProductForm() {
           borderRadius: "12px",
         }}
       >
-
         <h2 className="text-center mb-4">Add New Game</h2>
 
-        <form>
-
+        <form onSubmit={handleSubmit}>
           {/* Name of Game */}
           <div className="mb-3">
             <label className="form-label">Name of Game</label>
 
             <input
               type="text"
+              name="name"
               className="form-control"
               placeholder="Enter game name"
+              value={products.name}
+              onChange={handleChange}
             />
           </div>
 
@@ -32,9 +31,12 @@ function ProductForm() {
             <label className="form-label">Game Description</label>
 
             <textarea
+              name="description"
               className="form-control"
               rows="4"
               placeholder="Enter game description"
+              value={products.description}
+              onChange={handleChange}
             ></textarea>
           </div>
 
@@ -44,7 +46,10 @@ function ProductForm() {
 
             <input
               type="date"
+              name="releasedate"
               className="form-control"
+              value={products.releasedate}
+              onChange={handleChange}
             />
           </div>
 
@@ -52,7 +57,13 @@ function ProductForm() {
           <div className="mb-3">
             <label className="form-label">Game Genre</label>
 
-            <select className="form-select" multiple>
+            <select
+              name="gamegenre"
+              className="form-select"
+              multiple
+              value={products.gamegenre}
+              onChange={handleChange}
+            >
               <option>Action</option>
               <option>Adventure</option>
               <option>RPG</option>
@@ -70,7 +81,13 @@ function ProductForm() {
           <div className="mb-3">
             <label className="form-label">Platform</label>
 
-            <select className="form-select" multiple>
+            <select
+              name="platform"
+              className="form-select"
+              multiple
+              value={products.platform}
+              onChange={handleChange}
+            >
               <option>PC</option>
               <option>PS4</option>
               <option>PS5</option>
@@ -86,8 +103,10 @@ function ProductForm() {
 
             <input
               type="file"
+              name="image"
               className="form-control"
               accept="image/*"
+              onChange={handleChange}
             />
           </div>
 
@@ -97,8 +116,11 @@ function ProductForm() {
 
             <input
               type="text"
+              name="imageurl"
               className="form-control"
               placeholder="Paste image URL"
+              value={products.imageurl}
+              onChange={handleChange}
             />
           </div>
 
@@ -108,8 +130,11 @@ function ProductForm() {
 
             <input
               type="number"
+              name="price"
               className="form-control"
               placeholder="Enter game price"
+              value={products.price}
+              onChange={handleChange}
             />
           </div>
 
@@ -119,19 +144,18 @@ function ProductForm() {
 
             <input
               type="url"
+              name="learnmore"
               className="form-control"
               placeholder="https://example.com"
+              value={products.learnmore}
+              onChange={handleChange}
             />
           </div>
 
           {/* Submit Button */}
-          <button
-            type="submit"
-            className="btn btn-primary w-100"
-          >
+          <button type="submit" className="btn btn-primary w-100">
             Add Game
           </button>
-
         </form>
       </div>
     </div>
