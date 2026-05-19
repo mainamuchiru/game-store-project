@@ -15,6 +15,7 @@ import AdminPanelLayout from "./components/AdminPanelLayout";
 import AddNewGame from "./pages/adminpanel/AddNewGame";
 import EditGame from "./pages/adminpanel/EditGame";
 import AdminLandingPage from "./pages/adminpanel/AdminLandingPage";
+import EditGameForm from "./pages/adminpanel/EditGameForm";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route index element={<AdminLandingPage />} />
           <Route path="addnewgame" element={<AddNewGame />} />
           <Route path="editgame" element={<EditGame />} />
+           <Route path="editgame/:id" element={<EditGameForm />} />
         </Route>
 
         <Route path="contacts" element={<Contacts />} />

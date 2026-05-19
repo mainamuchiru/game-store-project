@@ -1,161 +1,130 @@
-function ProductForm({ products, handleSubmit, handleChange }) {
+import { GAME_GENRES, PLATFORMS } from "../constants/gameOptions";
+
+function ProductForm({
+  products,
+  handleSubmit,
+  handleChange,
+  headerTitle,
+  buttonText,
+}) {
   return (
     <div className="container mt-5 d-flex justify-content-center">
       <div
         className="card shadow p-4"
-        style={{
-          width: "100%",
-          maxWidth: "700px",
-          borderRadius: "12px",
-        }}
+        style={{ width: "100%", maxWidth: "700px", borderRadius: "12px" }}
       >
-        <h2 className="text-center mb-4">Add New Game</h2>
+        <h2 className="text-center mb-4">{headerTitle || "Game Form"}</h2>
 
         <form onSubmit={handleSubmit}>
-          {/* Name of Game */}
-          <div className="mb-3">
-            <label className="form-label">Name of Game</label>
+          {/* NAME */}
+          <input
+            name="name"
+            className="form-control mb-3"
+            placeholder="Game name"
+            value={products.name || ""}
+            onChange={handleChange}
+            required
+          />
 
-            <input
-              type="text"
-              name="name"
-              className="form-control"
-              placeholder="Enter game name"
-              value={products.name}
-              onChange={handleChange}
-            />
-          </div>
+          {/* DESCRIPTION */}
+          <textarea
+            name="description"
+            className="form-control mb-3"
+            placeholder="Description"
+            value={products.description || ""}
+            onChange={handleChange}
+          />
+          <select
+            name="releasedate"
+            className="form-select mb-3"
+            value={products.releasedate || ""}
+            onChange={handleChange}
+          >
+            <option value="">Year Released</option>
+            {Array.from({ length: 50 }, (_, i) => {
+              const year = new Date().getFullYear() - i;
+              return (
+                <option key={year} value={year}>
+                  {year}
+                </option>
+              );
+            })}
+          </select>
+          {/* GENRE */}
+          <label className="form-label">
+            Genres (Hold Ctrl/Cmd to select multiple)
+          </label>
+          <select
+            name="gamegenre"
+            className="form-select mb-3"
+            multiple
+            value={products.gamegenre || []}
+            onChange={handleChange}
+          >
+            {GAME_GENRES.map((genre) => (
+              <option key={genre} value={genre}>
+                {genre}
+              </option>
+            ))}
+          </select>
 
-          {/* Game Description */}
-          <div className="mb-3">
-            <label className="form-label">Game Description</label>
+          {/* PLATFORM */}
+          <label className="form-label">
+            Platforms (Hold Ctrl/Cmd to select multiple)
+          </label>
+          <select
+            name="platform"
+            className="form-select mb-3"
+            multiple
+            value={products.platform || []}
+            onChange={handleChange}
+            required
+          >
+            {PLATFORMS.map((platform) => (
+              <option key={platform} value={platform}>
+                {platform}
+              </option>
+            ))}
+          </select>
 
-            <textarea
-              name="description"
-              className="form-control"
-              rows="4"
-              placeholder="Enter game description"
-              value={products.description}
-              onChange={handleChange}
-            ></textarea>
-          </div>
+          {/* IMAGE */}
+          <input
+            type="file"
+            name="image"
+            className="form-control mb-3"
+            onChange={handleChange}
+          />
 
-          {/* Release Date */}
-          <div className="mb-3">
-            <label className="form-label">Release Date</label>
+          {/* URL */}
+          <input
+            name="imageurl"
+            className="form-control mb-3"
+            placeholder="Image URL"
+            value={products.imageurl || ""}
+            onChange={handleChange}
+          />
 
-            <input
-              type="date"
-              name="releasedate"
-              className="form-control"
-              value={products.releasedate}
-              onChange={handleChange}
-            />
-          </div>
+          {/* PRICE */}
+          <input
+            name="price"
+            type="number"
+            className="form-control mb-3"
+            placeholder="Price"
+            value={products.price || ""}
+            onChange={handleChange}
+            required
+          />
 
-          {/* Game Genre */}
-          <div className="mb-3">
-            <label className="form-label">Game Genre</label>
+          {/* LEARN MORE */}
+          <input
+            name="learnmore"
+            className="form-control mb-3"
+            placeholder="Learn more link"
+            value={products.learnmore || ""}
+            onChange={handleChange}
+          />
 
-            <select
-              name="gamegenre"
-              className="form-select"
-              multiple
-              value={products.gamegenre}
-              onChange={handleChange}
-            >
-              <option>Action</option>
-              <option>Adventure</option>
-              <option>RPG</option>
-              <option>Sports</option>
-              <option>Racing</option>
-              <option>Horror</option>
-              <option>Simulation</option>
-              <option>Fighting</option>
-              <option>Open World</option>
-              <option>Strategy</option>
-            </select>
-          </div>
-
-          {/* Platform */}
-          <div className="mb-3">
-            <label className="form-label">Platform</label>
-
-            <select
-              name="platform"
-              className="form-select"
-              multiple
-              value={products.platform}
-              onChange={handleChange}
-            >
-              <option>PC</option>
-              <option>PS4</option>
-              <option>PS5</option>
-              <option>XBOX One</option>
-              <option>XBOX Series X</option>
-              <option>Nintendo Switch</option>
-            </select>
-          </div>
-
-          {/* Upload Image */}
-          <div className="mb-3">
-            <label className="form-label">Upload Image</label>
-
-            <input
-              type="file"
-              name="image"
-              className="form-control"
-              accept="image/*"
-              onChange={handleChange}
-            />
-          </div>
-
-          {/* Image URL */}
-          <div className="mb-3">
-            <label className="form-label">Or Add Image URL</label>
-
-            <input
-              type="text"
-              name="imageurl"
-              className="form-control"
-              placeholder="Paste image URL"
-              value={products.imageurl}
-              onChange={handleChange}
-            />
-          </div>
-
-          {/* Price */}
-          <div className="mb-3">
-            <label className="form-label">Price</label>
-
-            <input
-              type="number"
-              name="price"
-              className="form-control"
-              placeholder="Enter game price"
-              value={products.price}
-              onChange={handleChange}
-            />
-          </div>
-
-          {/* Learn More URL */}
-          <div className="mb-4">
-            <label className="form-label">Learn More</label>
-
-            <input
-              type="url"
-              name="learnmore"
-              className="form-control"
-              placeholder="https://example.com"
-              value={products.learnmore}
-              onChange={handleChange}
-            />
-          </div>
-
-          {/* Submit Button */}
-          <button type="submit" className="btn btn-primary w-100">
-            Add Game
-          </button>
+          <button className="btn btn-primary w-100">{buttonText}</button>
         </form>
       </div>
     </div>

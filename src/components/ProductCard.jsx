@@ -1,52 +1,94 @@
-function ProductCard({ game }) {
+import { useNavigate } from "react-router-dom";
+
+function ProductCard({ game, mode = "user", onDelete }) {
+  const navigate = useNavigate();
+
   return (
-    <div
-      className="card h-100 shadow"
-      style={{ display: "flex", flexDirection: "column" }}
-    >
+    <div className="card h-100 shadow" style={{ minHeight: "520px" }}>
       <img
-        src={
-          game.image?.startsWith("blob:")
-            ? game.image
-            : game.imageurl ||
-              game.image ||
-              "https://images.unsplash.com/photo-1511512578047-dfb367046420"
-        }
-        alt="Product"
-        style={{
-          height: "200px",
-          width: "100%",
-          objectFit: "cover",
-        }}
-        onError={(e) => {
-          e.target.src =
-            "https://images.unsplash.com/photo-1511512578047-dfb367046420";
-        }}
+        src={game.imageurl || game.image}
+        style={{ height: "220px", width: "100%", objectFit: "cover" }}
+        alt={game.name}
       />
 
-      {/* Body */}
-      <div
-        className="card-body"
-        style={{ flex: 1, display: "flex", flexDirection: "column" }}
-      >
-        <h5 className="card-title">{game.name}</h5>
+      <div className="card-body d-flex flex-column">
+        <h5 className="fw-bold">{game.name}</h5>
 
-        <p className="card-text">Genre: {game.gamegenre || "Not set"}</p>
+        {/* Genre */}
+        <p className="mb-1">
+          <strong>Genre:</strong>{" "}
+          {Array.isArray(game.gamegenre)
+            ? game.gamegenre.join(", ")
+            : game.gamegenre}
+        </p>
 
-        <h6 className="text-primary">Platform: {game.platform}</h6>
+        {/* Description */}
+        <div className="bg-light p-2 rounded mb-2">
+          <small className="text-muted">
+            <strong>Description:</strong>
+          </small>
+          <p className="small text-muted mb-0">
+            {game.description?.length > 90
+              ? game.description.slice(0, 90) + "..."
+              : game.description}
+          </p>
+        </div>
 
-        <h6 className="text-primary">KES {game.price}</h6>
+        {/* Platform */}
+        <p className="mb-1">
+          <strong>Platform:</strong>{" "}
+          {Array.isArray(game.platform)
+            ? game.platform.join(", ")
+            : game.platform}
+        </p>
 
-        {/* Push button to bottom */}
-        <a
-          href={game.learnmore}
-          target="_blank"
-          rel="noreferrer"
-          className="btn btn-primary w-100"
-          style={{ marginTop: "auto" }}
-        >
-          Learn More
-        </a>
+        {/* Release Year */}
+        <p className="mb-2">
+          <strong>Released:</strong> {game.releasedate}
+        </p>
+
+        {/* Price */}
+        <h6 className="text-primary fw-bold">KES {game.price}</h6>
+
+        {/* USER VIEW */}
+        {mode === "user" && (
+          <a
+            href={game.learnmore}
+            className="btn btn-primary w-100 mt-auto"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Learn More
+          </a>
+        )}
+
+        {/* ADMIN VIEW */}
+        {mode === "admin" && (
+          <div className="mt-auto">
+            <a
+              href={game.learnmore}
+              className="btn btn-primary w-100 mb-2"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Learn More
+            </a>
+            <div className="d-flex gap-2">
+              <button
+                className="btn btn-warning w-50"
+                onClick={() => navigate(`/adminpanel/editgame/${game.id}`)}
+              >
+                Edit
+              </button>
+              <button
+                className="btn btn-danger w-50"
+                onClick={() => onDelete(game.id)}
+              >
+                Delete
+              </button>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

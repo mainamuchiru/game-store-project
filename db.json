@@ -1,52 +1,27 @@
 {
   "games": [
     {
-      "name": "Need for Speed",
-      "description": "Need for speed games",
-      "releasedate": "",
-      "gamegenre": "",
-      "platform": "PC",
-      "image": "",
+      "name": "Red Dead redemption",
+      "description": "Fortune exists, so does Danger in the wild west",
+      "releasedate": [
+        "2020"
+      ],
+      "gamegenre": [
+        "Action",
+        "Open World"
+      ],
+      "platform": [
+        "PC",
+        "PS4",
+        "PS5",
+        "XBOX One",
+        "XBOX Series X"
+      ],
+      "image": "blob:http://localhost:5173/672f8c59-58fd-4bf1-8d4c-6270cdf1cdd4",
       "imageurl": "",
-      "price": "",
-      "learnmore": "",
-      "id": "ymn7VKDOCW8"
-    },
-    {
-      "name": "Call Of Duty Black Ops 1",
-      "description": "First Person shooting game",
-      "releasedate": "2026-05-13",
-      "gamegenre": "",
-      "platform": "",
-      "image": "C:\\fakepath\\wallpaperswide.com-red-dead-redemption-2-dark-4k-wallpaper-1920x1080.jpg",
-      "imageurl": "",
-      "price": "345",
-      "learnmore": "https://www.ea.com/games/mass-effect",
-      "id": "w0zU3ubTF9I"
-    },
-    {
-      "name": "Fifa 2005",
-      "description": "Action sports game",
-      "releasedate": "2026-05-13",
-      "gamegenre": "",
-      "platform": "",
-      "image": "blob:http://localhost:5173/9d4716be-fe58-4ef8-ba59-268822335e86",
-      "imageurl": "",
-      "price": "9000",
-      "learnmore": "https://www.ea.com/games/mass-effect",
-      "id": "v8hojQATTZA"
-    },
-    {
-      "name": "Tomb Raider",
-      "description": "Lara Croft Archeologist",
-      "releasedate": "2026-05-13",
-      "gamegenre": "",
-      "platform": "",
-      "image": "blob:http://localhost:5173/c8de1221-e636-4beb-bf60-8ff0c3def567",
-      "imageurl": "",
-      "price": "8900",
-      "learnmore": "https://www.tombraider.com/",
-      "id": "lefYnLBkOdU"
+      "price": "6000",
+      "learnmore": "https://www.rockstargames.com/reddeadredemption",
+      "id": "hTqyJZYHQYk"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
