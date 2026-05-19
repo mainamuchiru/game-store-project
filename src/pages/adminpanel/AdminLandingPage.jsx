@@ -1,7 +1,12 @@
+import { useEffect } from "react";
 import useProducts from "../../hooks/useProducts";
 
 function AdminLandingPage() {
   const { products } = useProducts();
+  useEffect(() => {
+    document.title = "Admin | Overview";
+  }, []);
+
 
   return (
    <div className="container mt-4">

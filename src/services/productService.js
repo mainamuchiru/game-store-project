@@ -1,5 +1,3 @@
-// services/productService.js
-
 const API_URL = "http://localhost:3000/games";
 
 export async function getProducts() {

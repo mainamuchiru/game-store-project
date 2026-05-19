@@ -1,12 +1,10 @@
-// hooks/useProducts.js
-
 import { useState, useEffect } from "react";
 import {
   getProducts,
   addProduct,
   deleteProduct,
   updateProduct,
-  // 👇 ADD THIS
+  
 } from "../services/productService";
 
 export default function useProducts() {
@@ -31,7 +29,7 @@ export default function useProducts() {
     setProducts(products.filter((p) => p.id !== id));
   }
 
-  // ✅ ADD THIS WRAPPER
+ 
   async function editProduct(id, updatedData) {
     const updated = await updateProduct(id, updatedData);
 
@@ -49,7 +47,7 @@ export default function useProducts() {
     createProduct,
     removeProduct,
 
-    // ✅ expose it here
+    
     editProduct,
   };
 }

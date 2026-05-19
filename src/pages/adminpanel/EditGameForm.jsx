@@ -4,10 +4,10 @@ import useProducts from "../../hooks/useProducts";
 import ProductForm from "../../components/ProductForm";
 
 function EditGameForm() {
-  const buttonText = "Save Changes"
+  const buttonText = "Save Changes";
   const { id } = useParams();
   const navigate = useNavigate();
-  const { products, editProduct } = useProducts(); // ✅ get products array + editProduct
+  const { products, editProduct } = useProducts();
 
   const [gameData, setGameData] = useState({
     name: "",
@@ -21,15 +21,14 @@ function EditGameForm() {
     learnmore: "",
   });
 
-  // Load selected game from the products array
   useEffect(() => {
+    document.title = "Admin | Edit Game Form";
     const game = products.find((p) => String(p.id) === String(id));
     if (game) {
       setGameData(game);
     }
   }, [id, products]);
 
-  // Handle form changes (multi-select support)
   function handleChange(e) {
     const { name, value, files, selectedOptions } = e.target;
 
@@ -52,12 +51,13 @@ function EditGameForm() {
     }
   }
 
-  // Submit update
   async function handleSubmit(e) {
     e.preventDefault();
-    await editProduct(id, gameData);
-    alert("Game updated successfully!");
-    navigate("/adminpanel/editgame");
+    if (window.confirm("Are you sure you want to Save changes?")) {
+      await editProduct(id, gameData);
+      alert("Game updated successfully!");
+      navigate("/adminpanel/editgame");
+    }
   }
 
   return (

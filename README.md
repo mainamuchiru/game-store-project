@@ -1,18 +1,132 @@
-# React + Vite
+# 🎮 Game Store
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based web application for managing a video game store inventory. Built as part of Module 3 (React) coursework.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Browse Games** — View all games with search functionality
+- **Admin Panel** — Add, edit, and delete games
+- **Responsive Design** — Works on desktop and mobile
+- **Form Validation** — Multi-select genres and platforms
+- **Real-time Search** — Filter games by name instantly
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+- React 18
+- React Router DOM
+- Bootstrap 5
+- JSON Server (mock database)
+- Vite
 
-Note: This will impact Vite dev & build performances.
+## Getting Started
 
-## Expanding the ESLint configuration
+### Prerequisites
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Node.js installed
+- npm or yarn
+
+### Installation
+
+1. Clone the repository
+
+   ```bash
+   git clone https://github.com/yourusername/game-store-manager.git
+   cd game-store-manager
+   ```
+
+2. Install dependencies
+
+   ```bash
+   npm install
+   ```
+
+3. Install Bootstrap (if not already installed)
+
+   ```bash
+   npm install bootstrap
+   ```
+
+   Then import it in your `main.jsx`:
+
+   ```jsx
+   import 'bootstrap/dist/css/bootstrap.min.css';
+   ```
+
+4. Start the mock API server
+
+   ```bash
+   npx json-server --watch db.json --port 3000
+   ```
+
+5. Start the React app (in a new terminal)
+
+   ```bash
+   npm run dev
+   ```
+
+6. Open `http://localhost:5173` in your browser
+
+## Project Structure
+
+```
+game-store-manager/
+├── src/
+│   ├── components/
+│   │   ├── NavBar.jsx
+│   │   ├── ProductCard.jsx
+│   │   ├── ProductForm.jsx
+│   │   ├── SearchBar.jsx
+│   │   └── AdminPanelLayout.jsx
+│   ├── pages/
+│   │   ├── Home.jsx
+│   │   ├── Products.jsx
+│   │   ├── Contacts.jsx
+│   │   ├── NotFound.jsx
+│   │   └── adminpanel/
+│   │       ├── AdminLandingPage.jsx
+│   │       ├── AddNewGame.jsx
+│   │       ├── EditGame.jsx
+│   │       └── EditGameForm.jsx
+│   ├── hooks/
+│   │   ├── useProducts.js
+│   │   └── useFilteredProducts.js
+│   ├── services/
+│   │   └── productService.js
+│   ├── constants/
+│   │   └── gameOptions.js
+│   ├── App.jsx
+│   ├── App.css
+│   ├── main.jsx
+│   └── index.html
+├── db.json
+├── package.json
+├── vite.config.js
+└── README.md
+```
+
+## Route Map
+
+| URL | Page | Access |
+|-----|------|--------|
+| `/` | Home | Public |
+| `/products` | Game Listing | Public |
+| `/contacts` | Contact | Public |
+| `/adminpanel` | Admin Dashboard | Admin |
+| `/adminpanel/addnewgame` | Add Game | Admin |
+| `/adminpanel/editgame` | Edit Games Grid | Admin |
+| `/adminpanel/editgame/:id` | Edit Single Game | Admin |
+| `*` | 404 Not Found | Public |
+
+
+## Screenshots
+
+![Home Page](src/assets/homescreenshot.png)
+![Product Page](src/assets/productsscreenshot.png)
+![Admin Panel](src/assets/adminpanel.png)
+![Add New Game](src/assets/addnewgame.png)
+![Edit Games](src/assets/editgames.png)
+![Contacts](src/assets/contacts.png)
+
+## Author
+
+Philip Muchiru, Software engineering student at Moringa School 

@@ -1,27 +1,352 @@
 {
   "games": [
     {
-      "name": "Red Dead redemption",
-      "description": "Fortune exists, so does Danger in the wild west",
-      "releasedate": [
-        "2020"
-      ],
+      "id": "1",
+      "name": "Elden Ring",
+      "description": "An epic action RPG set in a vast open world crafted by Hidetaka Miyazaki and George R.R. Martin.",
+      "releasedate": "2022",
       "gamegenre": [
         "Action",
-        "Open World"
+        "RPG"
       ],
       "platform": [
         "PC",
-        "PS4",
         "PS5",
-        "XBOX One",
-        "XBOX Series X"
+        "Xbox"
       ],
-      "image": "blob:http://localhost:5173/672f8c59-58fd-4bf1-8d4c-6270cdf1cdd4",
-      "imageurl": "",
+      "imageurl": "https://image.api.playstation.com/vulcan/ap/rnd/202110/2000/phvVT0qZfcRms5qDAk0SI3CM.png",
+      "price": "7500",
+      "learnmore": "https://en.bandainamcoent.eu/elden-ring"
+    },
+    {
+      "id": "2",
+      "name": "God of War Ragnarök",
+      "description": "Kratos and journey through the Nine Realms to prevent Ragnarök.",
+      "releasedate": "2022",
+      "gamegenre": [
+        "Action",
+        "Adventure"
+      ],
+      "platform": [
+        "PS5",
+        "PS4"
+      ],
+      "imageurl": "https://image.api.playstation.com/vulcan/ap/rnd/202207/1210/4xJ8XB3bi888QTLZYdl7Oi0s.png",
+      "price": "6800",
+      "learnmore": "https://www.playstation.com/en-us/games/god-of-war-ragnarok/"
+    },
+    {
+      "id": "3",
+      "name": "FIFA 24",
+      "description": "The latest football simulation with updated rosters and HyperMotion technology.",
+      "releasedate": "2023",
+      "gamegenre": [
+        "Sports"
+      ],
+      "platform": [
+        "PC",
+        "PS5",
+        "Xbox",
+        "Switch"
+      ],
+      "imageurl": "https://image.api.playstation.com/vulcan/ap/rnd/202307/2005/6361775b1ae8d690ce4d0e3090f0e6a4e6a3e5d1c4b5a5f5.png",
+      "price": "5500",
+      "learnmore": "https://www.ea.com/games/ea-sports-fc/fc-24"
+    },
+    {
+      "id": "4",
+      "name": "Call of Duty: Modern Warfare III",
+      "description": "Intense first-person shooter campaign and multiplayer experience.",
+      "releasedate": "2023",
+      "gamegenre": [
+        "Shooter",
+        "Action"
+      ],
+      "platform": [
+        "PC",
+        "PS5",
+        "Xbox"
+      ],
+      "imageurl": "https://image.api.playstation.com/vulcan/ap/rnd/202309/2115/7c8c9a8e9f0d1a2b3c4d5e6f7a8b9c0d1e2f3a4b.png",
+      "price": "7000",
+      "learnmore": "https://www.callofduty.com/modernwarfare3"
+    },
+    {
+      "id": "5",
+      "name": "The Legend of Zelda: Tears of the Kingdom",
+      "description": "Link explores the skies and depths of Hyrule to save Princess Zelda.",
+      "releasedate": "2023",
+      "gamegenre": [
+        "Adventure",
+        "RPG"
+      ],
+      "platform": [
+        "Switch"
+      ],
+      "imageurl": "https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/ncom/software/switch/70010000063714/276a412988e07c4d55a59f5f0508fbcdd3455191394e867c4d9bcff7f248b01a",
+      "price": "6200",
+      "learnmore": "https://www.zelda.com/tears-of-the-kingdom"
+    },
+    {
+      "id": "6",
+      "name": "Hogwarts Legacy",
+      "description": "Experience Hogwarts in the 1800s as a student with ancient magical powers.",
+      "releasedate": "2023",
+      "gamegenre": [
+        "Action",
+        "RPG"
+      ],
+      "platform": [
+        "PC",
+        "PS5",
+        "Xbox",
+        "Switch"
+      ],
+      "imageurl": "https://image.api.playstation.com/vulcan/ap/rnd/202011/0919/cDHjFMPlzRCHbZXF.png",
+      "price": "6500",
+      "learnmore": "https://www.hogwartslegacy.com"
+    },
+    {
+      "id": "7",
+      "name": "Spider-Man 2",
+      "description": "Peter Parker and Miles Morales team up against Venom and new villains in New York.",
+      "releasedate": "2023",
+      "gamegenre": [
+        "Action",
+        "Adventure"
+      ],
+      "platform": [
+        "PS5"
+      ],
+      "imageurl": "https://image.api.playstation.com/vulcan/ap/rnd/202306/1219/1c8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b.png",
+      "price": "6800",
+      "learnmore": "https://www.playstation.com/en-us/games/marvels-spider-man-2/"
+    },
+    {
+      "id": "8",
+      "name": "Baldur's Gate 3",
+      "description": "A deep RPG based on Dungeons & Dragons with branching narratives and tactical combat.",
+      "releasedate": "2023",
+      "gamegenre": [
+        "RPG",
+        "Strategy"
+      ],
+      "platform": [
+        "PC",
+        "PS5",
+        "Xbox"
+      ],
+      "imageurl": "https://image.api.playstation.com/vulcan/ap/rnd/202302/2321/abcdef1234567890abcdef1234567890.png",
+      "price": "7200",
+      "learnmore": "https://baldursgate3.game"
+    },
+    {
+      "id": "9",
+      "name": "Mortal Kombat 1",
+      "description": "The iconic fighting franchise reboots with a new universe and brutal fatalities.",
+      "releasedate": "2023",
+      "gamegenre": [
+        "Fighting"
+      ],
+      "platform": [
+        "PC",
+        "PS5",
+        "Xbox",
+        "Switch"
+      ],
+      "imageurl": "https://image.api.playstation.com/vulcan/ap/rnd/202305/1515/1234567890abcdef1234567890abcdef.png",
+      "price": "5800",
+      "learnmore": "https://www.mortalkombat.com"
+    },
+    {
+      "id": "10",
+      "name": "NBA 2K24",
+      "description": "The latest basketball simulation with ProPLAY technology and Kobe Bryant edition.",
+      "releasedate": "2023",
+      "gamegenre": [
+        "Sports"
+      ],
+      "platform": [
+        "PC",
+        "PS5",
+        "Xbox",
+        "Switch"
+      ],
+      "imageurl": "https://image.api.playstation.com/vulcan/ap/rnd/202307/1010/abcdef1234567890abcdef1234567890.png",
+      "price": "5500",
+      "learnmore": "https://nba.2k.com/2k24"
+    },
+    {
+      "id": "11",
+      "name": "Assassin's Creed Mirage",
+      "description": "Return to the roots of stealth assassination in 9th century Baghdad.",
+      "releasedate": "2023",
+      "gamegenre": [
+        "Action",
+        "Adventure"
+      ],
+      "platform": [
+        "PC",
+        "PS5",
+        "Xbox"
+      ],
+      "imageurl": "https://image.api.playstation.com/vulcan/ap/rnd/202305/2020/abcdef1234567890abcdef1234567890.png",
       "price": "6000",
-      "learnmore": "https://www.rockstargames.com/reddeadredemption",
-      "id": "hTqyJZYHQYk"
+      "learnmore": "https://www.ubisoft.com/en-us/game/assassins-creed/mirage"
+    },
+    {
+      "id": "12",
+      "name": "Resident Evil 4 Remake",
+      "description": "Leon Kennedy rescues the president's daughter from a cult in rural Spain.",
+      "releasedate": "2023",
+      "gamegenre": [
+        "Horror",
+        "Action"
+      ],
+      "platform": [
+        "PC",
+        "PS5",
+        "Xbox"
+      ],
+      "imageurl": "https://image.api.playstation.com/vulcan/ap/rnd/202210/0706/abcdef1234567890abcdef1234567890.png",
+      "price": "6200",
+      "learnmore": "https://www.residentevil.com/re4/en-us/"
+    },
+    {
+      "id": "13",
+      "name": "Starfield",
+      "description": "Bethesda's epic space exploration RPG with 1000+ planets to discover.",
+      "releasedate": "2023",
+      "gamegenre": [
+        "RPG",
+        "Adventure"
+      ],
+      "platform": [
+        "PC",
+        "Xbox"
+      ],
+      "imageurl": "https://image.api.playstation.com/vulcan/ap/rnd/202306/1515/abcdef1234567890abcdef1234567890.png",
+      "price": "7000",
+      "learnmore": "https://bethesda.net/en/game/starfield"
+    },
+    {
+      "id": "14",
+      "name": "Forza Motorsport",
+      "description": "The ultimate racing simulation with ray tracing and 500+ cars.",
+      "releasedate": "2023",
+      "gamegenre": [
+        "Racing"
+      ],
+      "platform": [
+        "PC",
+        "Xbox"
+      ],
+      "imageurl": "https://image.api.playstation.com/vulcan/ap/rnd/202308/0101/abcdef1234567890abcdef1234567890.png",
+      "price": "5800",
+      "learnmore": "https://forza.net/motorsport"
+    },
+    {
+      "id": "15",
+      "name": "Super Mario Bros. Wonder",
+      "description": "Mario's latest 2D adventure with Wonder Flowers that transform levels.",
+      "releasedate": "2023",
+      "gamegenre": [
+        "Platformer"
+      ],
+      "platform": [
+        "Switch"
+      ],
+      "imageurl": "https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/ncom/software/switch/70010000068688/abcdef1234567890abcdef1234567890",
+      "price": "5000",
+      "learnmore": "https://supermariobroswonder.nintendo.com"
+    },
+    {
+      "id": "16",
+      "name": "Street Fighter 6",
+      "description": "The legendary fighting game returns with new mechanics and open-world exploration.",
+      "releasedate": "2023",
+      "gamegenre": [
+        "Fighting"
+      ],
+      "platform": [
+        "PC",
+        "PS5",
+        "Xbox"
+      ],
+      "imageurl": "https://image.api.playstation.com/vulcan/ap/rnd/202305/1010/abcdef1234567890abcdef1234567890.png",
+      "price": "5800",
+      "learnmore": "https://www.streetfighter.com/6"
+    },
+    {
+      "id": "17",
+      "name": "Diablo IV",
+      "description": "Return to Sanctuary to battle Lilith and hordes of demons in this dark action RPG.",
+      "releasedate": "2023",
+      "gamegenre": [
+        "Action",
+        "RPG"
+      ],
+      "platform": [
+        "PC",
+        "PS5",
+        "Xbox"
+      ],
+      "imageurl": "https://image.api.playstation.com/vulcan/ap/rnd/202304/1212/abcdef1234567890abcdef1234567890.png",
+      "price": "7200",
+      "learnmore": "https://diablo4.blizzard.com"
+    },
+    {
+      "id": "18",
+      "name": "Final Fantasy XVI",
+      "description": "An epic dark fantasy with real-time combat and massive Eikon battles.",
+      "releasedate": "2023",
+      "gamegenre": [
+        "RPG",
+        "Action"
+      ],
+      "platform": [
+        "PS5"
+      ],
+      "imageurl": "https://image.api.playstation.com/vulcan/ap/rnd/202212/2020/abcdef1234567890abcdef1234567890.png",
+      "price": "7000",
+      "learnmore": "https://finalfantasyxvi.com"
+    },
+    {
+      "id": "19",
+      "name": "Minecraft",
+      "description": "The legendary sandbox game where you build, explore, and survive blocky worlds.",
+      "releasedate": "2011",
+      "gamegenre": [
+        "Sandbox",
+        "Adventure"
+      ],
+      "platform": [
+        "PC",
+        "PS5",
+        "Xbox",
+        "Switch"
+      ],
+      "imageurl": "https://image.api.playstation.com/vulcan/img/cfn/11307uYG0CXzRuA9aryByTHYrQLFz-HVQ3VVl7aA72g.png",
+      "price": "2500",
+      "learnmore": "https://www.minecraft.net"
+    },
+    {
+      "id": "20",
+      "name": "Grand Theft Auto V",
+      "description": "The open-world crime epic following three criminals in Los Santos.",
+      "releasedate": "2013",
+      "gamegenre": [
+        "Action",
+        "Adventure"
+      ],
+      "platform": [
+        "PC",
+        "PS5",
+        "Xbox"
+      ],
+      "imageurl": "https://image.api.playstation.com/vulcan/ap/rnd/202101/2015/abcdef1234567890abcdef1234567890.png",
+      "price": "3500",
+      "learnmore": "https://www.rockstargames.com/gta-v"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

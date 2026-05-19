@@ -1,9 +1,14 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ProductForm from "../../components/ProductForm";
 import useProducts from "../../hooks/useProducts";
 
 function AddNewGame() {
-  const buttonText = "Add Game"
+  useEffect(() => {
+    document.title = "Admin | Add new Game";
+  }, []);
+
+  const buttonText = "Add Game";
+
   const { createProduct } = useProducts();
   const [gameData, setGameData] = useState({
     name: "",
@@ -21,20 +26,17 @@ function AddNewGame() {
     const { name, value, files, selectedOptions } = e.target;
 
     if (files) {
-      // File input
       setGameData({
         ...gameData,
         [name]: URL.createObjectURL(files[0]),
       });
     } else if (selectedOptions) {
-      // Multi-select (gamegenre or platform)
       const values = Array.from(selectedOptions).map((opt) => opt.value);
       setGameData({
         ...gameData,
         [name]: values,
       });
     } else {
-      // Regular input
       setGameData({
         ...gameData,
         [name]: value,
@@ -44,10 +46,13 @@ function AddNewGame() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    await createProduct(gameData);
-    alert(
-      `${gameData.name} Genre: ${gameData.gamegenre} Has been added succesfully`,
-    );
+
+    if (window.confirm("Are you sure you want to add Game")) {
+      await createProduct(gameData);
+      alert(
+        `${gameData.name} Genre: ${gameData.gamegenre} Has been added succesfully`,
+      );
+    }
   }
 
   return (
