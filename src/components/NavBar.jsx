@@ -1,9 +1,12 @@
-
-
+import { Link } from "react-router-dom";
+import Products from "../pages/Products";
+import AdminPanel from "../pages/AdminPanel";
+import Contacts from "../pages/Contacts"
+import Home from "../pages/Home"
 
 function NavBar() {
   console.log("Hello World");
- return (
+  return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container-fluid">
         <a className="navbar-brand" href="#">
@@ -22,30 +25,32 @@ function NavBar() {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
-              <a className="nav-link active" href="#">
+              <Link to="/"  className="nav-link active" >
                 Home
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link to="/products" className="nav-link" >
                 Products
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link to="/adminpanel" className="nav-link" >
                 Admin Dashboard
-              </a>
+              </Link>
             </li>
 
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link to="/contacts" className="nav-link">
                 Contacts
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
       </div>
+     
     </nav>
+    
   );
 }
 
